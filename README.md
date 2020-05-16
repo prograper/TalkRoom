@@ -48,4 +48,4 @@
 #### 打开包 com.yanggongzhuo.demo下的DemoServer，然后打开DemoClient的任意一个即可
 ----------------------------------------
 >@author ygz
-##### [.github仓库地址](https://github.com/prograper/TalkRoom)
+##### [Google邮箱](gongzhuoy@gmail.com)
