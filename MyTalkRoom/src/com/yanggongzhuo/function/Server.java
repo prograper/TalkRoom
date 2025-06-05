@@ -165,7 +165,7 @@ public class Server {
                     byte buf2[] = new byte[1024];
                     DatagramPacket packet = new DatagramPacket(buf2, buf2.length);
                     multicastServer.receive(packet);
-                    String msg = new String(buf2);
+                    String msg = new String(buf2, 0, packet.getLength());
                     String cmd[] = msg.split(" ");
                     System.out.println(msg);
                     if (cmd.length == 3) {
