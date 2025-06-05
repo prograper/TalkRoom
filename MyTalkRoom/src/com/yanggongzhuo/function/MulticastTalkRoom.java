@@ -119,7 +119,7 @@ public class MulticastTalkRoom {
                 tempPacket = new DatagramPacket(tempBuf, tempBuf.length);
                 try {
                     receiver.receive(tempPacket);
-                    String[] cmd = new String(tempBuf).split(" ");
+                    String[] cmd = new String(tempBuf, 0, tempPacket.getLength()).split(" ");
                     if (cmd[0].equals("Collection")) {
 //                        System.out.println("这里是检验是否能够收到成员列表" + new String(tempBuf));
                         DefaultListModel<String> model = new DefaultListModel<>();
@@ -129,7 +129,7 @@ public class MulticastTalkRoom {
                         }
                         talkRoomUI.getMembersList().setModel(model);
                     } else {
-                        talkRoomUI.getMsgPrintArea().append(new String(tempBuf) + "\n");
+                        talkRoomUI.getMsgPrintArea().append(new String(tempBuf, 0, tempPacket.getLength()) + "\n");
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
